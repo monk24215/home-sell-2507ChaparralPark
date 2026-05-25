@@ -1711,12 +1711,16 @@ footer em { font-family: var(--serif); font-style: italic; color: rgba(246, 241,
 <script src="https://quick-agent.wiredhowse.app/widget.js" defer></script>
 <script>
 
-    $(window).load(function(){
-        $('#backdrop').modal('backdrop open');
-    });
+window.onload = function() {
+  document.getElementById('backdrop').className = 'open';
+};
   
-var memymodal = new bootstrap.Modal(document.getElementById('backdrop'), {})
-memymodal.toggle();
+//     $(window).load(function(){
+//         $('#backdrop').modal('backdrop open');
+//     });
+  
+// var memymodal = new bootstrap.Modal(document.getElementById('backdrop'), {})
+// memymodal.toggle();
   
 </script>
 </body>
