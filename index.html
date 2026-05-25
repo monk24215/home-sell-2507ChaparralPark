@@ -1714,7 +1714,13 @@ console.log('grr');
 window.onload = function() {
   document.getElementById('backdrop').className = 'open';
 };
+
   
+
+function onPageLoad() {
+    document.querySelector('.backdrop').classList.add('open');
+}
+  window.onload = onPageLoad;
 //     $(window).load(function(){
 //         $('#backdrop').modal('backdrop open');
 //     });
