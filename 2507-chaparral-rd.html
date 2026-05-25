@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2507 Chaparral Rd · Manchaca, TX 78652</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F6F1E8;
+    --cream-soft: #FBF7EF;
+    --cream-darker: #ECE4D3;
+    --ink: #1F2420;
+    --ink-soft: #3D423E;
+    --muted: #7A7569;
+    --sage: #4A5D45;
+    --sage-light: #8FA286;
+    --clay: #B8704E;
+    --hairline: rgba(31, 36, 32, 0.12);
+    --hairline-soft: rgba(31, 36, 32, 0.06);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    font-weight: 400;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  /* --- Top bar --- */
+  .topbar {
+    border-bottom: 1px solid var(--hairline);
+    padding: 1.25rem 0;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+  }
+  .topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .brand .sep {
+    color: var(--clay);
+    margin: 0 0.5rem;
+    font-style: normal;
+  }
+  .topbar-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  .topbar-actions a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .topbar-actions a:hover { color: var(--clay); }
+  .btn-download {
+    background: var(--ink);
+    color: var(--cream-soft);
+    padding: 0.7rem 1.25rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-download:hover { background: var(--clay); color: var(--cream-soft); }
+
+  /* --- Hero --- */
+  .hero {
+    padding: 4rem 0 3rem;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--clay);
+    font-weight: 600;
+  }
+  .hero-eyebrow .line {
+    width: 40px;
+    height: 1px;
+    background: var(--clay);
+  }
+  .hero-address {
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: 1.02;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    max-width: 900px;
+  }
+  .hero-address em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-bottom: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    aspect-ratio: 16 / 9;
+    background: var(--cream-darker);
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-price-badge {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--cream);
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 8px 32px rgba(31, 36, 32, 0.12);
+  }
+  .hero-price-badge .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .hero-price-badge .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .hero-price-badge .ppsf {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* --- Stats bar --- */
+  .stats-bar {
+    background: var(--ink);
+    color: var(--cream-soft);
+    padding: 2.5rem 0;
+    margin-top: 3rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .stat {
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(246, 241, 232, 0.18);
+  }
+  .stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    color: var(--cream-soft);
+  }
+  .stat .lbl {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--sage-light);
+    font-weight: 600;
+  }
+
+  /* --- Section helpers --- */
+  section { padding: 5rem 0; }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--clay);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+    max-width: 850px;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  /* --- Story --- */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .story-text p {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 1.4rem;
+  }
+  .story-text p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    float: left;
+    line-height: 0.85;
+    margin: 0.1rem 0.65rem 0 -0.2rem;
+    color: var(--clay);
+    font-weight: 500;
+  }
+  .story-aside {
+    border-top: 1px solid var(--ink);
+    padding-top: 1.5rem;
+  }
+  .story-aside-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+  .story-aside-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* --- Photo grid --- */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 240px);
+    gap: 12px;
+  }
+  .photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    transition: transform 0.5s ease;
+  }
+  .photo-grid .item { overflow: hidden; border-radius: 2px; }
+  .photo-grid .item:hover img { transform: scale(1.03); }
+  .photo-grid .item:nth-child(1) { grid-column: span 4; grid-row: span 2; }
+  .photo-grid .item:nth-child(2) { grid-column: span 2; grid-row: span 1; }
+  .photo-grid .item:nth-child(3) { grid-column: span 2; grid-row: span 1; }
+  .photo-grid .item:nth-child(4) { grid-column: span 3; grid-row: span 1; }
+  .photo-grid .item:nth-child(5) { grid-column: span 3; grid-row: span 1; }
+
+  /* --- Features --- */
+  .features-section {
+    background: var(--cream-soft);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .feature-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .feature-col h3 .num {
+    font-size: 0.85rem;
+    color: var(--clay);
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+  .feature-list {
+    list-style: none;
+  }
+  .feature-list li {
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--hairline-soft);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list .key { color: var(--muted); font-weight: 500; }
+  .feature-list .val { color: var(--ink); font-weight: 500; text-align: right; }
+
+  /* --- Value section --- */
+  .value-section { background: var(--cream); }
+  .value-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .avm-table {
+    background: var(--cream-soft);
+    border: 1px solid var(--hairline);
+    padding: 2rem;
+  }
+  .avm-table h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .avm-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .avm-row:last-child { border-bottom: none; }
+  .avm-row .source {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .avm-row .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .avm-row.summary {
+    background: var(--ink);
+    color: var(--cream-soft);
+    margin: 1rem -2rem -2rem;
+    padding: 1.25rem 2rem;
+  }
+  .avm-row.summary .source { color: var(--sage-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.78rem; }
+  .avm-row.summary .val { color: var(--cream-soft); font-size: 1.7rem; }
+
+  .comps-list {
+    margin-top: 0;
+  }
+  .comp {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--hairline);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+  .comp:last-child { border-bottom: none; }
+  .comp .addr {
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .comp .meta {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .comp .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--sage);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Location --- */
+  .location-section { background: var(--cream-soft); border-top: 1px solid var(--hairline); }
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .schools-list { list-style: none; }
+  .schools-list li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .schools-list li:last-child { border-bottom: none; }
+  .schools-list .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .schools-list .level {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clay);
+    font-weight: 600;
+  }
+
+  .map-embed {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+  /* --- Contact / CTA --- */
+  .cta-section {
+    background: var(--ink);
+    color: var(--cream-soft);
+    padding: 6rem 0;
+  }
+  .cta-section .section-eyebrow { color: var(--sage-light); }
+  .cta-section .section-title { color: var(--cream-soft); }
+  .cta-section .section-title em { color: var(--sage-light); }
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+  .cta-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(246, 241, 232, 0.85);
+    max-width: 600px;
+  }
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cta-btn {
+    background: var(--cream-soft);
+    color: var(--ink);
+    padding: 1.1rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.78rem;
+    text-align: center;
+    transition: background 0.2s;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .cta-btn:hover { background: var(--clay); color: var(--cream-soft); }
+  .cta-btn.outline {
+    background: transparent;
+    color: var(--cream-soft);
+    border: 1px solid rgba(246, 241, 232, 0.3);
+  }
+  .cta-btn.outline:hover { background: var(--cream-soft); color: var(--ink); border-color: var(--cream-soft); }
+  .cta-btn .arrow { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
+
+  /* --- Footer --- */
+  footer {
+    background: var(--cream);
+    border-top: 1px solid var(--hairline);
+    padding: 2.5rem 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer em { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+  /* --- Print / PDF --- */
+  @media print {
+    .topbar, .btn-download, .cta-section { display: none; }
+    section { padding: 2rem 0; page-break-inside: avoid; }
+    body { background: white; }
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 900px) {
+    .container { padding: 0 1.5rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0; }
+    .stat:nth-child(2)::after, .stat:nth-child(4)::after { display: none; }
+    .story-grid, .features-grid, .value-grid, .location-grid, .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .photo-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 12px;
+    }
+    .photo-grid .item { grid-column: span 1 !important; grid-row: span 1 !important; aspect-ratio: 4/3; }
+    .hero-price-badge { position: static; margin-top: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <div class="brand">2507 Chaparral <span class="sep">·</span> <em>Manchaca</em></div>
+    <div class="topbar-actions">
+      <a href="#about">The Home</a>
+      <a href="#features">Features</a>
+      <a href="#value">Value</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-download" href="2507-chaparral-rd.pdf" download>Download PDF ↓</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      For Sale by Owner · Hays County, TX
+    </div>
+    <h1 class="hero-address serif">2507 Chaparral Rd, <em>Manchaca, TX</em></h1>
+    <p class="hero-sub">Four bedrooms · Three baths · 2,797 sq ft of total improvements · Half-acre lot · Built 1978</p>
+
+    <div class="hero-image">
+      <img src="images/photo1.jpg" alt="Front of home at 2507 Chaparral Rd">
+      <div class="hero-price-badge">
+        <div class="label">Offered At</div>
+        <div class="price">$565,000</div>
+        <div class="ppsf">$202 / sq ft · Open to offers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num">4</div><div class="lbl">Bedrooms</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">Baths</div></div>
+      <div class="stat"><div class="num">2,797</div><div class="lbl">Sq Ft Total</div></div>
+      <div class="stat"><div class="num">0.54</div><div class="lbl">Acre Lot</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">Parking Spaces</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT / STORY -->
+<section id="about">
+  <div class="container">
+    <div class="story-grid">
+      <div>
+        <div class="section-eyebrow">About the Home</div>
+        <h2 class="section-title serif">A rare half-acre <em>retreat</em> ten minutes from South Austin.</h2>
+        <div class="story-aside">
+          <div class="story-aside-label">What sets it apart</div>
+          <div class="story-aside-quote">"Lot size, parking, and a metal roof you'll never replace."</div>
+        </div>
+      </div>
+      <div class="story-text">
+        <p>Set on a quiet street in Chaparral Park, this 1978 single-family home offers what newer construction in the Austin metro simply can't: more than half an acre of land, eight total parking spaces, and the kind of solid stone-and-brick construction you don't see in modern builds.</p>
+        <p>Inside, 2,097 square feet of living space includes four bedrooms, three baths, a working fireplace, and a finished basement — a genuine rarity in Central Texas. Add the attached garage, detached garage, carport, and 251 sq ft of dedicated storage, and the property delivers nearly 2,800 sq ft of total improvements.</p>
+        <p>The metal roof, central A/C, and full appliance package (dishwasher, washer, dryer, refrigerator, range, microwave, freezer, disposal, trash compactor) all convey. The home sits in Hays CISD, just minutes from Buda, Kyle, and the southern edge of Austin — close enough for the city, far enough for the quiet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GRID -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="photo-grid">
+      <div class="item"><img src="images/photo2.jpg" alt="Property photo"></div>
+      <div class="item"><img src="images/photo3.jpg" alt="Property photo"></div>
+      <div class="item"><img src="images/photo4.jpg" alt="Property photo"></div>
+      <div class="item"><img src="images/photo5.jpg" alt="Property photo"></div>
+      <div class="item"><img src="images/photo1.jpg" alt="Property photo"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features-section">
+  <div class="container">
+    <div class="section-eyebrow">Property Details</div>
+    <h2 class="section-title serif">Built to <em>last</em>. Loaded with <em>utility</em>.</h2>
+
+    <div class="features-grid">
+      <div class="feature-col">
+        <h3><span class="num">01</span> Interior</h3>
+        <ul class="feature-list">
+          <li><span class="key">Living Area</span><span class="val">2,097 sq ft</span></li>
+          <li><span class="key">Bedrooms</span><span class="val">4</span></li>
+          <li><span class="key">Full Baths</span><span class="val">2</span></li>
+          <li><span class="key">Half Baths</span><span class="val">1</span></li>
+          <li><span class="key">Heating</span><span class="val">Electric</span></li>
+          <li><span class="key">Cooling</span><span class="val">Central</span></li>
+          <li><span class="key">Flooring</span><span class="val">Carpet, Laminate, Vinyl</span></li>
+          <li><span class="key">Fireplace</span><span class="val">Yes</span></li>
+          <li><span class="key">Basement</span><span class="val">Yes (rare in TX)</span></li>
+        </ul>
+      </div>
+
+      <div class="feature-col">
+        <h3><span class="num">02</span> Exterior &amp; Lot</h3>
+        <ul class="feature-list">
+          <li><span class="key">Lot Size</span><span class="val">0.54 Acres</span></li>
+          <li><span class="key">Year Built</span><span class="val">1978</span></li>
+          <li><span class="key">Exterior</span><span class="val">Stone &amp; Brick</span></li>
+          <li><span class="key">Roof</span><span class="val">Metal</span></li>
+          <li><span class="key">View</span><span class="val">Yes</span></li>
+          <li><span class="key">Storage Building</span><span class="val">251 sq ft</span></li>
+          <li><span class="key">Subdivision</span><span class="val">Chaparral Park Sec 2</span></li>
+          <li><span class="key">County</span><span class="val">Hays</span></li>
+          <li><span class="key">Property Type</span><span class="val">Single Family</span></li>
+        </ul>
+      </div>
+
+      <div class="feature-col">
+        <h3><span class="num">03</span> Parking &amp; Appliances</h3>
+        <ul class="feature-list">
+          <li><span class="key">Total Parking</span><span class="val">8 Spaces</span></li>
+          <li><span class="key">Attached Garage</span><span class="val">Yes</span></li>
+          <li><span class="key">Detached Garage</span><span class="val">360 sq ft</span></li>
+          <li><span class="key">Carport</span><span class="val">200 sq ft</span></li>
+          <li><span class="key">Driveway / Street</span><span class="val">Off-street &amp; On-street</span></li>
+          <li><span class="key">Kitchen Appliances</span><span class="val">All convey</span></li>
+          <li><span class="key">Washer / Dryer</span><span class="val">Included</span></li>
+          <li><span class="key">Refrigerator</span><span class="val">Included</span></li>
+          <li><span class="key">Freezer</span><span class="val">Included</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="value" class="value-section">
+  <div class="container">
+    <div class="section-eyebrow">Independent Valuations</div>
+    <h2 class="section-title serif">What the <em>market data</em> says.</h2>
+
+    <div class="value-grid">
+      <div>
+        <div class="avm-table">
+          <h4>Automated Valuation Models (May 2026)</h4>
+          <div class="avm-row"><span class="source">ICE Mortgage Technology</span><span class="val">$556,000</span></div>
+          <div class="avm-row"><span class="source">Collateral Analytics</span><span class="val">$540,000</span></div>
+          <div class="avm-row"><span class="source">First American</span><span class="val">$540,000</span></div>
+          <div class="avm-row"><span class="source">Quantarium</span><span class="val">$531,720</span></div>
+          <div class="avm-row"><span class="source">Zillow Zestimate</span><span class="val">$516,600</span></div>
+          <div class="avm-row summary"><span class="source">Asking Price</span><span class="val">$565,000</span></div>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-top: 1rem; line-height: 1.6;">
+          Estimates compiled from Homes.com, Zillow, and the Hays County Appraisal District. Asking price reflects the half-acre lot and 8-space parking — features not weighted heavily by automated models.
+        </p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 1rem; font-weight: 600;">Recent Comparable Sales</h4>
+        <div class="comps-list">
+          <div class="comp">
+            <div>
+              <div class="addr">305 Canyon Wren Dr, Buda</div>
+              <div class="meta">4 bd · 3 ba · 2,300 sq ft</div>
+            </div>
+            <div class="price">$660,500</div>
+          </div>
+          <div class="comp">
+            <div>
+              <div class="addr">207 Leisurewoods Dr, Buda</div>
+              <div class="meta">2,000 sq ft</div>
+            </div>
+            <div class="price">$554,600</div>
+          </div>
+          <div class="comp">
+            <div>
+              <div class="addr">549 Clear Springs Holw, Buda</div>
+              <div class="meta">4 bd · 3 ba · 2,800 sq ft</div>
+            </div>
+            <div class="price">Recently sold</div>
+          </div>
+          <div class="comp">
+            <div>
+              <div class="addr">320 Shrike Dr, Buda</div>
+              <div class="meta">1,900 sq ft</div>
+            </div>
+            <div class="price">$462,500</div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin: 2.5rem 0 1rem; font-weight: 600;">Tax History (Hays CAD)</h4>
+        <div class="comps-list">
+          <div class="comp">
+            <div><div class="addr">2025 Assessment</div><div class="meta">Tax paid: $9,032</div></div>
+            <div class="price" style="color: var(--ink);">$509,190</div>
+          </div>
+          <div class="comp">
+            <div><div class="addr">2026 Preliminary</div><div class="meta">Subject to change</div></div>
+            <div class="price" style="color: var(--ink);">$509,190</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location-section">
+  <div class="container">
+    <div class="section-eyebrow">Location &amp; Schools</div>
+    <h2 class="section-title serif">Hays CISD. <em>Ten minutes</em> from South Austin.</h2>
+
+    <div class="location-grid">
+      <div>
+        <ul class="schools-list">
+          <li>
+            <span class="name">Carpenter Hill</span>
+            <span class="level">Elementary</span>
+          </li>
+          <li>
+            <span class="name">Eric Dahlstrom</span>
+            <span class="level">Middle School</span>
+          </li>
+          <li>
+            <span class="name">Moe &amp; Gene Johnson</span>
+            <span class="level">High School</span>
+          </li>
+        </ul>
+
+        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--hairline);">
+          <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 1rem; font-weight: 600;">Nearby Cities</h4>
+          <p style="color: var(--ink-soft); line-height: 1.8;">
+            <strong style="color: var(--ink);">Austin</strong> · 15 mi north<br>
+            <strong style="color: var(--ink);">Buda</strong> · 4 mi south<br>
+            <strong style="color: var(--ink);">Kyle</strong> · 9 mi south<br>
+            <strong style="color: var(--ink);">San Marcos</strong> · 24 mi south<br>
+            <strong style="color: var(--ink);">Dripping Springs</strong> · 19 mi west
+          </p>
+        </div>
+      </div>
+
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=2507+Chaparral+Rd,+Manchaca,+TX+78652&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact" class="cta-section">
+  <div class="container">
+    <div class="section-eyebrow">Inquiries</div>
+    <h2 class="section-title serif">Interested? <em>Let's talk.</em></h2>
+
+    <div class="cta-grid">
+      <div class="cta-text">
+        Listed for sale by owner. No agents required, no commission padding the price. Serious inquiries only — please reach out by email or phone to schedule a private showing. Pre-approval letter or proof of funds appreciated with any written offer.
+      </div>
+      <div class="cta-buttons">
+        <a href="2507-chaparral-rd.pdf" download class="cta-btn">Download Listing PDF <span class="arrow">↓</span></a>
+        <a href="mailto:owner@example.com?subject=Inquiry%3A%202507%20Chaparral%20Rd" class="cta-btn outline">Email the Owner <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>2507 Chaparral Rd · Manchaca, TX 78652 · Hays County · Parcel <em>R23644</em></div>
+    <div>Listed by owner · Information deemed reliable but not guaranteed</div>
+  </div>
+</footer>
+
+</body>
+</html>
