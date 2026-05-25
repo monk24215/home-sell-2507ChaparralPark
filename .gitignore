@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment / secrets (just in case)
+.env
+.env.local
+
+# OS-generated previews
+*.png.bak
+*.jpg.bak
+
+# Python (if regenerating the PDF locally)
+__pycache__/
+*.py[cod]
+venv/
+.venv/
